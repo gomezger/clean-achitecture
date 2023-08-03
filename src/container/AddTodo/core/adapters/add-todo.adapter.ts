@@ -13,11 +13,14 @@ export const useAddTodoAdapter = (): IUseAddTodoAdapter => {
     const repository = useAddTodoRepository();
     
     const save = async (todo: Todo): Promise<void> => {
-        await repository.save(
+        const result = await repository.save(
             todo.title,
-            todo.date.toSeconds().toString(),
+            todo.date.toISODate() ?? '',
             todo.details,
         )
+        if(result.status !== 200 ){
+            throw new Error('Error al guardar el recodatorio')
+        }
     }
 
     return { save };
