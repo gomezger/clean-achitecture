@@ -12,28 +12,8 @@ export const Home = () => {
       <View style={styles.menu}>
         <Button
           type={TypeButton.fullFill}
-          text={'Botones'}
-          onPress={() => nav.navigate('ButtonsExample')}
-        />
-        <Button
-          type={TypeButton.fullFill}
-          text={'Modal'}
-          onPress={() => nav.navigate('ModalsExample')}
-        />
-        <Button
-          type={TypeButton.fullFill}
-          text={'Text'}
-          onPress={() => nav.navigate('TextsExample')}
-        />
-        <Button
-          type={TypeButton.fullFill}
-          text={'Lottie'}
-          onPress={() => nav.navigate('LottieExample')}
-        />
-        <Button
-          type={TypeButton.fullFill}
-          text={'Toast'}
-          onPress={() => nav.navigate('ToastExample')}
+          text={'Agregar recordatorio'}
+          onPress={() => nav.navigate('AddTodo')}
         />
       </View>
     </View>
