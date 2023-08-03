@@ -11,6 +11,11 @@ export interface IUseAddTodoCase {
      * @param todo - datos almacenados en el formulario
      */
     save: (todo: Partial<Todo>) => Promise<void>;
+
+    /**
+     * Estado de save.
+     * @example es true si save se está ejecutando, false caso contrario
+     */
     loading: boolean;
 }
 

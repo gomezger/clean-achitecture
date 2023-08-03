@@ -25,7 +25,7 @@ public class TodoModule extends ReactContextBaseJavaModule {
 
 
     @ReactMethod
-    public void save(String title, int dateInTimestamp, String details, Promise promise) {
+    public void save(String title, String dateInTimestamp, String details, Promise promise) {
         promise.resolve(1);
     }
 
