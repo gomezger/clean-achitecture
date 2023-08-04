@@ -16,24 +16,28 @@ export const AddTodo = () => {
     await save(todo);
   }
 
+  const changeAttr = (data: Partial<Todo>): void => {
+    setTodo(old => ({ ...old, ...data }));
+  }
+
   return (
     <ScrollView style={styles.container}>
       <Text variant={TextVariant.H1} style={styles.title}>{'Guardar Recordatorio'}</Text>
 
       <Input
-        onChange={(title: string) => { setTodo({ title }) }}
+        onChange={(title: string) => changeAttr({ title }) }
         label={'Título'}
         style={styles.input}
         editable={!addTodoProps.loading}
       />
       <Input
-        onChange={(date: string) => { setTodo({ date: DateTime.fromFormat(date, 'dd/mm/yyyy') }) }}
+        onChange={(date: string) => { changeAttr({ date: DateTime.fromFormat(date, 'dd/mm/yyyy') }) }}
         label={'Fecha'}
         style={styles.input}
         editable={!addTodoProps.loading}
       />
       <Input
-        onChange={(details: string) => { setTodo({ details }) }}
+        onChange={(details: string) => { changeAttr({ details }) }}
         label={'Descripción'}
         style={styles.input}
         editable={!addTodoProps.loading}

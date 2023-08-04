@@ -15,16 +15,26 @@ export interface IUseAddTodoRepository {
 export const useAddTodoRepository = (): IUseAddTodoRepository => {
 
     const save = async (title: string, date: string, details: string): Promise<ResponseFetch<number, Todo>> => {
-        const result = await fetchApi<number, Todo>({
-            url: 'https://api-rest.com/api/v1/todos',
-            method: Method.POST,
-            body: {
-                title,
-                date,
-                details,
-            },
-        });
-        return result;
+        // const result = await fetchApi<number, Todo>({
+        //     url: 'https://api-rest.com/api/v1/todos',
+        //     method: Method.POST,
+        //     body: {
+        //         title,
+        //         date,
+        //         details,
+        //     },
+        // });
+        // return result;
+        return new Promise((resolve)=>{
+            setTimeout(()=>{
+                resolve({
+                    data: 4,
+                    status: 200,
+                    statusText: 'OK',
+                    timeout: false
+                });
+            }, 3000)
+        })
     }
 
     return {

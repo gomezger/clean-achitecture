@@ -1,13 +1,6 @@
 import { Todo } from "../domain/todo.domain";
 import { useAddTodoRepository } from "../repository/add-todo.repository";
-
-export interface IUseAddTodoAdapter {
-    /**
-     * Recibe un todo y adapta al repositorio que se esté utilizando
-     * @param todo - {@link Todo} 
-     */
-    save: (todo: Todo) => Promise<void>;
-}
+import { IUseAddTodoAdapter } from "./IAddTodo.adapter";
 
 export const useAddTodoAdapter = (): IUseAddTodoAdapter => {
     const repository = useAddTodoRepository();
