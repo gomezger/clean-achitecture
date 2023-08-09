@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {height, width} from './constants/Dimensions';
 import {useNavigation} from '@react-navigation/native';
-import {NavigationProps} from '../App';
+import {NavigationProps} from './App';
 
 export const Home = () => {
   const nav = useNavigation<NavigationProps>();

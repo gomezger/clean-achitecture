@@ -4,8 +4,8 @@
  *
  * @format
  */
-
 import React from 'react';
+import { registerAllDependecies } from "./utils/inversionDependecies/registerAllDependecies";
 import {
   NavigationContainer,
   NavigationContainerRef,
@@ -14,9 +14,9 @@ import {
   createNativeStackNavigator,
   NativeStackNavigationProp,
 } from '@react-navigation/native-stack';
-import {Home} from './src/Home';
+import {Home} from './Home';
 import {Toast} from '@core/toast';
-import { AddTodo } from './src/container/AddTodo/add-todo.container';
+import { AddTodo } from './container/AddTodo/add-todo.container';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -26,6 +26,7 @@ const Stack = createNativeStackNavigator();
 export type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
 
 const App = (): JSX.Element => {
+  registerAllDependecies();
   const navigationRef =
     React.useRef<NavigationContainerRef<RootStackParamList> | null>(null);
 

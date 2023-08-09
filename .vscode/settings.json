@@ -17,5 +17,6 @@
     "typescript",
     "vue",
     "typescriptreact"
-  ]
+  ],
+  "java.compile.nullAnalysis.mode": "automatic"
 }

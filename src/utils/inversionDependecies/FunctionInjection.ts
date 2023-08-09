@@ -1,0 +1,1 @@
+export type FunctionInjection<T> = () => T;
